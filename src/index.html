@@ -18,10 +18,27 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
 		/>
 		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					screens: {
+						xs: '150px',
+						sm: '640px',
+						md: '768px',
+						lg: '1024px',
+						xl: '1280px',
+						'2xl': '1440px',
+						'3xl': '1920px',
+					},
+				},
+			}
+		</script>
 		<title>Туристичні місця Рівненщини</title>
 	</head>
 	<body>
-		<header class="header">
+		<header
+			class="header xs:px-2 sm:px-5 lg:px-[5rem] xl:px-[7rem] 2xl:px-[15rem]"
+		>
 			<img
 				src="https://img.freepik.com/premium-vector/km-logo_677696-8.jpg"
 				alt="logo"
@@ -34,17 +51,47 @@
 					<i class="fa-solid fa-bars"></i>
 					<span>Головна</span>
 				</a>
-				<a href="/src/index.html">
-					<i class="fa-solid fa-earth-americas"></i>
-					<span>Пам'ятки</span>
-				</a>
 			</nav>
 		</header>
-		<section class="banner" id="bannerContainer">
+		<section
+			class="banner xs:grid xs:!grid-cols-1 sm:!grid-cols-2 xl:hidden xs:px-2 sm:px-5 lg:px-[5rem]"
+		>
+			<h1 class="banner_logo">Rivne</h1>
+			<div
+				class="banner_imageItem"
+				style="
+					background-image: url(https://inside-ua.com/files/places/tarakanivskyi-fort-7.500x625.webp?e36dd62b7ffa265f25681c98b1e017b1);
+				"
+			>
+				<div class="banner_inner">
+					<h2 class="banner_top">Фортеці, замки, палаци</h2>
+					<a class="banner_title" href="/">Тараканівський форт</a>
+					<p class="banner_location">Тараканів</p>
+				</div>
+			</div>
+			<div
+				class="banner_imageItem xs:hidden sm:block"
+				style="
+					background-image: url(https://inside-ua.com/files/places/klevan-love-01.500x625.webp?a2c36fa70f335ca9f9064d01ee5b948e);
+				"
+			>
+				<div class="banner_inner">
+					<h2 class="banner_top">Церкви, костели, монастирі</h2>
+					<a class="banner_title" href="">Благовіщенський костел</a>
+					<p class="banner_location">Клевань</p>
+				</div>
+			</div>
+		</section>
+		<section
+			class="banner xs:hidden xl:grid xl:px-[7rem] 2xl:px-[15rem]"
+			id="bannerContainer"
+		>
 			<h1 class="banner_logo">Rivne</h1>
 		</section>
 		<br />
-		<section class="memories">
+		<section
+			class="memories xs:px-2 sm:px-5 lg:px-[5rem] xl:px-[7rem] 2xl:px-[15rem] xs:flex xs:flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3"
+		>
 			<div class="mem_card col-span-2 rounded-lg bg-blue-300">
 				<h1>Фосфатні гори</h1>
 				<p>
@@ -54,10 +101,10 @@
 					кислоти, що використовується для створення мінеральних добрив.
 				</p>
 				<br />
-				<button class="usual_button">
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
 			<div class="mem_card rounded-lg bg-amber-300">
 				<h1>Біле озеро</h1>
@@ -66,10 +113,11 @@
 					кількості гліцерину, що міститься у воді. <tempora></tempora>
 				</p>
 				<br />
-				<button class="usual_button">
+				<!-- Посилання -->
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
 			<div class="mem_card rounded-lg bg-lime-200 row-span-2">
 				<h1>Тунель кохання</h1>
@@ -82,10 +130,10 @@
 					стоячи тут. <tempora></tempora>
 				</p>
 				<br />
-				<button class="usual_button">
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
 			<div class="mem_card rounded-lg bg-rose-300">
 				<h1>Дубенський замок</h1>
@@ -95,10 +143,10 @@
 					для культурного наслідку України. <tempora></tempora>
 				</p>
 				<br />
-				<button class="usual_button">
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
 			<div class="mem_card rounded-lg bg-purple-300">
 				<h1>Соколині гори</h1>
@@ -109,10 +157,10 @@
 					Україну. <tempora></tempora>
 				</p>
 				<br />
-				<button class="usual_button">
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
 			<div class="mem_card rounded-lg bg-sky-200">
 				<h1>Базальтові стовпи</h1>
@@ -123,10 +171,10 @@
 					самородна, пірит, хлорит, халцедон та інші.<tempora></tempora>
 				</p>
 				<br />
-				<button class="usual_button">
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
 			<div class="mem_card rounded-lg bg-emerald-300 row-span-2">
 				<h1>Острозький замок</h1>
@@ -141,10 +189,10 @@
 					більше за весь рік не чутно стуку. <tempora></tempora>
 				</p>
 				<br />
-				<button class="usual_button">
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
 			<div class="mem_card rounded-lg bg-purple-300">
 				<h1>Білівськи пагорби</h1>
@@ -155,10 +203,10 @@
 					природою ще цікавішими та запам’ятовуючими. <tempora></tempora>
 				</p>
 				<br />
-				<button class="usual_button">
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
 			<div class="mem_card rounded-lg bg-yellow-200">
 				<h1>Зіньків камінь</h1>
@@ -168,10 +216,10 @@
 					після бою. <tempora></tempora>
 				</p>
 				<br />
-				<button class="usual_button">
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
 			<div class="mem_card col-span-2 rounded-lg bg-teal-300">
 				<h1>Тараканівський форд</h1>
@@ -182,12 +230,14 @@
 					ходіть туди самі.
 				</p>
 				<br />
-				<button class="usual_button">
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
-			<div class="mem_card rounded-lg bg-purple-300">
+			<div
+				class="mem_card rounded-lg bg-purple-300 sm:col-span-2 lg:col-span-1"
+			>
 				<h1>Юзефінський дуб</h1>
 				<p>
 					На дереві збереглося дві гілки. Воно досі плодоносить. Ширина дуба –
@@ -195,14 +245,16 @@
 					отримала від роду литовських князів Радзивілів <tempora></tempora>
 				</p>
 				<br />
-				<button class="usual_button">
+				<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 					Читати більше
 					<i class="fa-solid fa-arrow-right"></i>
-				</button>
+				</a>
 			</div>
 		</section>
 		<br />
-		<section class="sect1">
+		<section
+			class="sect1 xs:px-2 sm:px-5 lg:px-[5rem] xl:px-[7rem] 2xl:px-[15rem]"
+		>
 			<div class="s1_inner">
 				<div class="w-[60%]">
 					<h1 class="heading">Голубі озера на Рівненщині:</h1>
@@ -213,18 +265,23 @@
 						мають цілющі властивості.
 					</p>
 					<br />
-					<button class="usual_button">
+					<a href="./pages/bile_ozero/bile_ozero.html" class="usual_button">
 						Читати більше
 						<i class="fa-solid fa-arrow-right"></i>
-					</button>
+					</a>
 				</div>
 				<br />
 				<br />
 				<div>
 					<h2 class="sect1_category">Категорії</h2>
 					<br />
-					<div class="sect1_grid">
-						<a class="category_card_container col-span-3" href="#">
+					<div
+						class="sect1_grid xs:!flex xs:!flex-col sm:!grid sm:!grid-cols-5"
+					>
+						<a
+							class="category_card_container col-span-3"
+							href="./pages/bile_ozero/bile_ozero.html"
+						>
 							<img
 								class="ccc_img"
 								src="https://inside-ua.com/files/places/dubenskyi-zamok-1.500x625.webp?58ebb1ee454ebd855177c92ff8d9eb26"
@@ -234,7 +291,10 @@
 								<p class="ccc_inner_title">Фортеці, замки, палаци</p>
 							</div>
 						</a>
-						<a class="category_card_container col-span-2" href="#">
+						<a
+							class="category_card_container col-span-2"
+							href="./pages/bile_ozero/bile_ozero.html"
+						>
 							<img
 								class="ccc_img"
 								src="https://inside-ua.com/files/places/bili-hory-5.500x625.webp?07ffcd2c95493a9e895509882d6f7975"
@@ -244,13 +304,19 @@
 								<p class="ccc_inner_title">Кар'єри</p>
 							</div>
 						</a>
-						<a class="category_card_container col-span-2 row-start-2" href="#">
+						<a
+							class="category_card_container col-span-2 row-start-2"
+							href="./pages/bile_ozero/bile_ozero.html"
+						>
 							<img class="ccc_img" src="../image/1.png" alt="img" />
 							<div class="ccc_inner">
 								<p class="ccc_inner_title">Природні об`єкти</p>
 							</div>
 						</a>
-						<a class="category_card_container row-start-2 col-span-3" href="#">
+						<a
+							class="category_card_container row-start-2 col-span-3"
+							href="./pages/bile_ozero/bile_ozero.html"
+						>
 							<img class="ccc_img" src="../image/bile.png" alt="img" />
 							<div class="ccc_inner">
 								<p class="ccc_inner_title">Озера</p>
@@ -261,11 +327,15 @@
 			</div>
 		</section>
 		<br />
-		<section class="best">
+		<section
+			class="best xs:px-2 sm:px-5 lg:px-[5rem] xl:px-[7rem] 2xl:px-[15rem]"
+		>
 			<h1 class="heading">Найпопулярніші місця 2024</h1>
 			<br />
-			<div class="cardgrid">
-				<a class="bestCardContainer" href="#">
+			<div
+				class="cardgrid xs:gap-4 xs:!grid-cols-1 md:!grid-cols-2 lg:!grid-cold-3 xl:!grid-cols-4"
+			>
+				<a class="bestCardContainer" href="./pages/bile_ozero/bile_ozero.html">
 					<img
 						class="bcc_img"
 						src="https://inside-ua.com/files/places/dubenskyi-zamok-1.500x625.webp?58ebb1ee454ebd855177c92ff8d9eb26"
@@ -280,7 +350,7 @@
 						<p class="bcc_inner_location">Дубно</p>
 					</div>
 				</a>
-				<a class="bestCardContainer" href="#">
+				<a class="bestCardContainer" href="./pages/bile_ozero/bile_ozero.html">
 					<img
 						class="bcc_img"
 						src="https://inside-ua.com/files/places/klevan-love-04.500x625.webp?441e10f34f2a7d57552181e6ad515f73"
@@ -295,7 +365,7 @@
 						<p class="bcc_inner_location">Клевань</p>
 					</div>
 				</a>
-				<a class="bestCardContainer" href="#">
+				<a class="bestCardContainer" href="./pages/bile_ozero/bile_ozero.html">
 					<img
 						class="bcc_img"
 						src="https://inside-ua.com/files/places/bili-hory-7.500x625.webp?628f56aac9e4484f3081f01d7ac92b35"
@@ -310,7 +380,7 @@
 						<p class="bcc_inner_location">Рівненська область</p>
 					</div>
 				</a>
-				<a class="bestCardContainer" href="#">
+				<a class="bestCardContainer" href="./pages/bile_ozero/bile_ozero.html">
 					<img
 						class="bcc_img"
 						src="https://inside-ua.com/files/places/tarakanivskyi-fort-1.500x625.webp?2d3adc1e299e4c11621d5900c0fcb16c"
@@ -328,7 +398,9 @@
 			</div>
 		</section>
 		<br />
-		<section class="sect1">
+		<section
+			class="sect1 xs:px-2 sm:px-5 lg:px-[5rem] xl:px-[7rem] 2xl:px-[15rem]"
+		>
 			<div class="s1_inner">
 				<div class="w-[60%]">
 					<h1 class="heading">Відгуки</h1>
@@ -339,7 +411,10 @@
 				<div>
 					<h2 class="sect1_category">статистика</h2>
 					<br />
-					<div class="sect1_grid_2" id="feedbackContainer"></div>
+					<div
+						class="sect1_grid_2 xs:!grid-cols-1 md:!grid-cols-2 lg:!grid-cols-3"
+						id="feedbackContainer"
+					></div>
 				</div>
 			</div>
 		</section>
